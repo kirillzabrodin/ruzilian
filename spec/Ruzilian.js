@@ -6,7 +6,7 @@ function describe(def, func) {
     return func();
 }
 
-const it = (def, func) => describe(" " + def, func)
+const it = (def, func) => describe(" " + def, func);
 
 const matchers = (exp) => ({
   toEqual: (value) =>  {
@@ -27,6 +27,6 @@ const matchers = (exp) => ({
       return true
     }
   }
-})
+});
 
-const expect = (exp) => matchers(exp)
+const expect = (exp) => matchers(exp);
