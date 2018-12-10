@@ -1,19 +1,19 @@
-function describe(definition, specFunction) {
-    console.log(definition + specFunction())
+function describe(def, func) {
+    func();
 }
 
-function it(definition, testFunction) {
-    return definition + testFunction
-}
+const it = (def, func) => describe(" " + def, func)
 
-function Expect(method) {
-    this.method = method;
-}
+const matchers = (exp) => ({
+  toEqual: (value) =>  {
+    if (exp === value) {
+      console.log('pass')
+      return true
+    } else {
+      console.log('fail')
+      return false
+    }
+  }
+})
 
-Expect.prototype.isEqual = function(value) {
-
-    return (value === this.method ? "Pass" : "Fail");
-
-};
-
-const expect = new Expect();
+const expect = (exp) => matchers(exp)
