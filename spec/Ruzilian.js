@@ -2,18 +2,18 @@ function describe(def, func) {
     func();
 }
 
-const it = (def, func) => describe(" " + def, func)
+const it = (def, func) => describe(" " + def, func);
 
 const matchers = (exp) => ({
   toEqual: (value) =>  {
     if (exp === value) {
-      console.log('pass')
+      console.log('pass');
       return true
     } else {
-      console.log('fail')
+      console.log('fail');
       return false
     }
   }
-})
+});
 
-const expect = (exp) => matchers(exp)
+const expect = (exp) => matchers(exp);
