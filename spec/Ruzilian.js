@@ -16,7 +16,7 @@ const matchers = (exp) => ({
     } else {
       console.error('%cfail', css)
       return false
-    }
+    }.catch
   },
   toNotEqual: (value) =>  {
     if (exp === value) {
