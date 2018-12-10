@@ -2,7 +2,7 @@ const css = "text-shadow: -1px -1px hsl(0,100%,50%), 1px 1px hsl(5.4, 100%, 50%)
 
 
 function describe(def, func) {
-    console.log('%c'+ def, css)
+    console.log('%c'+ def, css);
     return func();
 }
 
@@ -11,20 +11,12 @@ const it = (def, func) => describe(" " + def, func);
 const matchers = (exp) => ({
   toEqual: (value) =>  {
     if (exp === value) {
-      console.log('%cpass', css)
+      console.log('%cpass', css);
       return true
     } else {
-      console.error('%cfail', css)
+      console.error('%cfail', css);
+      console.trace();
       return false
-    }.catch
-  },
-  toNotEqual: (value) =>  {
-    if (exp === value) {
-      console.error('%cfail', css)
-      return false
-    } else {
-      console.log('%cpass', css)
-      return true
     }
   }
 });
